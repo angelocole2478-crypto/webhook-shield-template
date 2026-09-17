@@ -1,0 +1,28 @@
+{
+  "name": "webhook-shield-template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable Railway template for durable webhook delivery with retries and DLQ.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "worker": "node dist/worker.js",
+    "test": "NODE_ENV=test node --import tsx/esm --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@fastify/basic-auth": "^5.1.0",
+    "bullmq": "^5.40.3",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "ioredis": "^5.4.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
